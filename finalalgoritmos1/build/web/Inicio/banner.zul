@@ -1,0 +1,13 @@
+<div hflex="1" vflex="1" sclass="banner">
+	<hbox hflex="1" vflex="1" align="center">
+		<a href="http://www.zkoss.org/">
+			<image src="/imagenes/zklogo.png" width="90px" />
+		</a>
+		<div width="1000px">
+			<label value="Control Escolar" sclass="banner-head" />
+		</div>
+		<hbox hflex="1" vflex="1" pack="end" align="end">
+			Mendoza Chimal Julio Cesar
+		</hbox>
+	</hbox>
+</div>

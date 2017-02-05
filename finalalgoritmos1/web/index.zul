@@ -1,0 +1,43 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<zk>
+	<borderlayout hflex="1" vflex="1">
+		<north height="100px" border="none" >
+			<include src="/Inicio/banner.zul"/>
+		</north>
+		<center id="mainContent" autoscroll="true">
+			<vbox vflex="1" hflex="1" align="center" spacing="20px"  sclass="demo-main">
+				<label value="Universidad Iberoamericana" sclass="head1"/>
+				<label value="Salones" sclass="head2"/>
+				<hlayout>
+					<a href="/clases/c_salonlist.zul">Salon</a>
+                                        <a href="/Registros/registrosalon.zul">Registrar Salones</a>
+				</hlayout>
+				
+				<label value="Grupos" sclass="head2"/>
+				<hlayout>
+					<a href="/clases/c_grupolist.zul">Grupos</a>
+                                        <a href="/Registros/registrogrupos.zul">Registrar Grupos</a>
+				</hlayout>
+				
+				<label value="Materias" sclass="head2"/>
+				<hlayout>
+					<a href="/clases/c_materialist.zul">Materias</a>
+                                        <a href="/Registros/registromaterias.zul">Registrar Materias</a>
+				</hlayout>
+				
+				<label value="Alumnos" sclass="head2"/>
+				<hlayout>
+					<a href="/clases/usuariolist.zul">Usuarios</a>
+                                        <a href="/Registros/registrousuarios.zul">Registrar Usuarios</a>
+				</hlayout>
+                                <label value="Sepomex" sclass="head2"/>
+				<hlayout>
+					<a href="/clases/sepomexlist.zul">Sepomex</a>
+				</hlayout>
+			</vbox>
+		</center>
+		<south height="50px" border="none">
+			<include src="/Inicio/footer.zul"/>
+		</south>
+	</borderlayout>
+</zk>

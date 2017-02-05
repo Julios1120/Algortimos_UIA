@@ -1,0 +1,37 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<window border="normal" apply="com.ibero.vistas.EditControlerUsuario" width="400px" title="Bienvenido Nuevo Usuario">
+    <grid hflex="1"> <!-- hflex="1" - available width inside parent (window) -->
+        <columns visible="false">
+            <column/><!-- define 2 columns to enable auxhead/er -->
+            <column/>
+        </columns>
+        <auxhead>
+            <auxheader colspan="2" label="Formulario de Registro" style="font-size:16px" image="/imagenes/profile.png"/>
+        </auxhead>
+        <rows>
+            <row>
+                Nombre <textbox id="nameBox" value="${win$composer.registro.nombre}" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                Apellido Paterno <textbox id="ApPBox" value="${win$composer.registro.a_paterno}" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                Apellido Materno <textbox id="ApMBox" value="${win$composer.registro.a_materno}" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                id_Tipo Usuario <textbox id="idtuserBox" value="${win$composer.registro.id_tipousuario}" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                Id_Sepomex <textbox id="idsepoBox" value="${win$composer.registro.id_sepomex}" hflex="1" constraint="no empty"/>
+            </row>
+            <row spans="2" align="right">
+                <hlayout>
+                    
+                    <button id="submitButton" label="Submit" onClick="@command('guardar')"/>
+                </hlayout>
+            </row>
+        </rows>
+    </grid>
+</window>
+</zk>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="maperusuario">
+    <select id ="selectusuario" resultType="usuario">
+        select * from usuario
+    </select>
+    <insert id="insertUser" parameterType="usuario">
+   
+   		INSERT INTO`usuario` (`nombre`, `a_paterno`, `a_materno`, `id_tipousuario`,`id_sepomex`) VALUES 
+                (#{nombre, jdbcType=VARCHAR},#{a_paterno, jdbcType=VARCHAR},#{a_materno, jdbcType=VARCHAR},
+    	        #{id_tipousuario},#{id_sepomex})
+    	
+   </insert>
+</mapper>

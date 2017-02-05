@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapergrupo">
+    <select id ="selectgrupo" resultType="grupo">
+        select id_grupo, descripcion from c_grupo
+    </select>
+    <insert id="insertGrupo" parameterType="grupo">
+   
+   		INSERT INTO`c_grupo` (`descripcion`) VALUES 
+                (#{descripcion, jdbcType=VARCHAR})
+    	
+   </insert>
+</mapper>

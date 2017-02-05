@@ -1,0 +1,31 @@
+<zk xmlns:c="client">
+    <div apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('com.ibero.vistas.sepomexViewModel')">
+         <grid id="sepomexGrid" hflex="min" model="@load(vm.direciones)">
+            <columns height="22px">
+                <column width="120px" label="ID" align="center"></column>
+                <column width="330px" label="CodigoPostal" align="center"></column>
+                 <column width="330px" label="Estado" align="center"></column>
+                <column width="330px" label="Municipio" align="center"></column>
+                <column width="330px" label="Colonia" align="center"></column>
+            </columns>
+            <template name="model">
+                <row>
+                    <textbox inplace="true"
+                             value="@bind(each.id)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.codigoPostal)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.estado)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.municipio)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.colonia)" width="99%" />
+                </row>
+            </template>
+        </grid> 
+        
+    </div>
+</zk>
+
+

@@ -1,0 +1,29 @@
+<zk xmlns:c="client">
+    <div apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('com.ibero.vistas.codigospostalesViewModel')">
+         <grid id="codigoGrid" hflex="min" model="@load(vm.codigos)">
+            <columns height="22px">
+                <column width="140px" label="ID" align="center"></column>
+                <column width="140px" label="CODIGOPOSTAL" align="center"></column>
+                <column width="140px" label="MUNICIPIO" align="center"></column>
+                <column width="140px" label="ESTADO" align="center"></column>
+                <column width="330px" label="COLONIA" align="center"></column>
+            </columns>
+            <template name="model">
+                <row>
+                    <textbox inplace="true"
+                             value="@bind(each.id)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.CodigoPostal)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.Estado)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.Municipio)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.Colonia)" width="99%" />
+                </row>
+            </template>
+        </grid> 
+        
+    </div>
+</zk>

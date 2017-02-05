@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapersalon">
+    <select id ="selectsalon" resultType="salon">
+        select id_salon, descripcion from c_salon
+    </select>
+    <insert id="insertSalon" parameterType="Salon">
+   
+   		INSERT INTO`c_salon` (`descripcion`) VALUES 
+                (#{descripcion, jdbcType=VARCHAR})
+    	
+   </insert>
+</mapper>

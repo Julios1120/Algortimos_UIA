@@ -1,0 +1,165 @@
+﻿Información de la versión
+Microsoft JDBC Driver 4.2 para SQL Server
+Agosto de 2015
+
+------------
+INTRODUCCIÓN
+------------
+Este archivo contiene información de última hora u otra información importante que complementa la 
+documentación de Microsoft JDBC Driver 4.2 para SQL Server. Lea este archivo en su totalidad antes 
+de proceder con la instalación del controlador JDBC.
+
+Sus comentarios son muy importantes para nosotros y nos esforzaremos en responderle con la mayor 
+brevedad posible. Para obtener más información acerca de cómo enviar comentarios a través de los 
+blogs y de los foros en línea del controlador JDBC, consulte la página de Microsoft JDBC Driver 4.2 
+para SQL Server, http://msdn.microsoft.com/data/jdbc.
+
+
+------------
+INSTALACIÓN
+------------
+Las instrucciones para instalar el controlador JDBC se encuentran en install.txt.  Consulte dicho 
+archivo para obtener más información sobre cómo instalar el controlador JDBC en los sistemas 
+operativos Windows y Unix.
+
+
+---------------------------
+SISTEMAS OPERATIVOS COMPATIBLES
+---------------------------
+Los sistemas operativos compatibles con Microsoft JDBC Driver 4.2 para SQL Server son:
+  Windows Server 2008 SP2
+  Windows Server 2008 R2 SP1
+  Windows Server 2012
+  Windows Server 2012 R2
+  Windows Vista SP2
+  Windows 7 SP1
+  Windows 8
+  Windows 8.1
+  Windows 10
+  Linux
+  Unix
+
+Esta lista es un ejemplo de algunos de los sistemas operativos compatibles. El controlador JDBC está 
+diseñado para funcionar en cualquier sistema operativo que sea compatible con el uso de una máquina 
+virtual Java (JVM). Sin embargo, solo se probó con Oracle Solaris (x86), SUSE Linux, Windows Vista 
+Service Pack 2 y versiones posteriores.
+
+
+----------------
+CONTENIDO DE LA VERSIÓN
+----------------
+El archivo .tar o .zip ejecutable de Microsoft JDBC Driver 4.2 para SQL Server permite desempaquetar 
+los siguientes archivos en las ubicaciones especificadas, relativas al directorio de instalación 
+seleccionado:
+
+<installation directory>\sqljdbc_<version>\<language>\install.txt
+<installation directory>\sqljdbc_<version>\<language>\release.txt
+<installation directory>\sqljdbc_<version>\<language>\license.txt
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc.jar
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc4.jar
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc41.jar
+<installation directory>\sqljdbc_<version>\<language>\sqljdbc42.jar
+<installation directory>\sqljdbc_<version>\<language>\auth\x86\sqljdbc_auth.dll
+<installation directory>\sqljdbc_<version>\<language>\auth\x64\sqljdbc_auth.dll
+<installation directory>\sqljdbc_<version>\<language>\samples\<sample files...>
+<installation directory>\sqljdbc_<version>\<language>\xa\xa_install.sql
+<installation directory>\sqljdbc_<version>\<language>\xa\x86\sqljdbc_xa.dll
+<installation directory>\sqljdbc_<version>\<language>\xa\x64\sqljdbc_xa.dll
+
+Para obtener información detallada acerca de cada componente, consulte la 
+documentación en línea de Microsoft JDBC Driver para SQL Server: 
+https://msdn.microsoft.com/es-es/library/dn197850(v=sql.10).aspx
+
+Documentación:
+-------------
+En este paquete se incluyen la información de esta versión, las instrucciones de instalación y los 
+términos de licencia. 
+El resto de la documentación se puede encontrar en línea.
+
+Tenga en cuenta que ya no se ofrece acceso a los archivos de ayuda sin conexión. Sugerencia útil: si 
+necesita la documentación sin conexión, puede exportar las páginas directamente en MSDN (solo debe 
+buscar la característica Exportar en la esquina superior derecha de su explorador web).
+
+
+Archivos .jar:
+---------
+Para admitir la compatibilidad con versiones anteriores y con posibles escenarios de actualización, 
+JDBC Driver 4.2 incluye cuatro bibliotecas de clases .jar en cada paquete de instalación: 
+sqljdbc.jar, sqljdbc4.jar, sqljdbc41.jar y sqljdbc42.jar.  
+
+Nota importante: sqljdbc.jar y sqljdbc4.jar se proporcionan solo para la compatibilidad con 
+versiones anteriores, pero no contienen las características nuevas que se incluyen en esta versión. 
+Solo sqljdbc41.jar y sqljdbc42.jar incorporan las nuevas características.
+
+
+Archivos de características específicas:
+---------
+Los componentes de la autenticación integrada (en Windows) se incluyen en el directorio de autenticación.
+
+Los componentes de las transacciones distribuidas de JDBC se incluyen en el directorio xa.
+
+
+Ejemplos:
+-------
+En el directorio de ejemplos, se incluyen aplicaciones de ejemplo que muestran varias de las 
+características del controlador JDBC. Para obtener más detalles sobre cada ejemplo y sobre cómo 
+ejecutarlos, consulte la documentación en línea.
+
+
+-----------
+LISTA DE CAMBIOS
+-----------
+Cambios de la versión 4.1 a la 4.2:
+
+Ahora, el controlador JDBC es compatible con la versión 8 de Java Development Kit (JDK) e incluye un 
+nuevo archivo .jar, sqljdbc42.jar, conforme a la API de JDBC 4.2.
+
+Se actualizó el archivo sqljdbc41.jar para que fuera compatible con la API de JDBC 4.1.
+
+Se mejoró el control de la configuración del tiempo de espera para revertir las transacciones XA.
+
+Se actualizó el modo de validar un certificado SSL cuando se produce un redireccionamiento en Azure.
+
+Se agregó una propiedad de conexión serverSpn para permitir flexibilidad a la hora de especificar la 
+entidad de seguridad Kerberos (y permitir conexiones entre dominios cuando el dominio predeterminado 
+del cliente no es el mismo que el del servidor).
+
+Nueva característica: Copia masiva: ahora, los desarrolladores de aplicaciones pueden escribir 
+soluciones de código en Java para copiar de forma masiva grandes cantidades de datos en SQL Server 
+desde cualquier origen de datos que pueda leerse con una instancia ResultSet o desde un archivo CSV.
+
+
+------------
+PROBLEMAS CONOCIDOS
+------------
+A continuación se muestran los problemas conocidos de Microsoft JDBC Driver 4.2 para SQL Server:
+
+1) LIMITACIONES PARA LA OBTENCIÓN DE METADATOS DE PARÁMETROS CON LA INSTRUCCIÓN MERGE DE SQL
+
+PreparedStatement.getParameterMetadata() devuelve SQLException cuando se usa
+con una consulta parametrizada MERGE.
+
+
+2) Kerberos de Java y las máquinas virtuales Java de IBM
+
+Si está ejecutando el software en entornos de Windows, es posible que tenga que especificar el nombre principal en el 
+archivo de configuración para que el Kerberos de Java funcione. Por ejemplo: 
+SQLJDBCDriver {
+  com.ibm.security.auth.module.Krb5LoginModule required
+  seDefaultCcache=true
+  credsType=initiator
+  principal=principalname@principaldomain;
+};
+
+
+3) CAÍDAS DE CONEXIONES CON SQL AZURE
+
+Al conectar con SQL Azure, un componente de red (como un firewall) puede terminar las conexiones 
+inactivas tras un periodo de inactividad. Para evitar la caída de conexiones inactivas por parte de 
+un componente de red, debe establecerse la siguiente configuración del Registro (o sus equivalentes 
+para sistemas operativos que no sean Windows) en el sistema operativo en el que se cargó el controlador:
+           
+Configuración del Registro                                                         Valor recomendado
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime            30000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveInterval         1000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\TcpMaxDataRetransmission  10

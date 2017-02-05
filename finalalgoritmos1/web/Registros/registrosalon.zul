@@ -1,0 +1,24 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<window border="normal" apply="com.ibero.vistas.EditControlerSalon" width="400px" title="Registro Salones">
+    <grid hflex="1"> <!-- hflex="1" - available width inside parent (window) -->
+        <columns visible="false">
+            <column/><!-- define 2 columns to enable auxhead/er -->
+            <column/>
+        </columns>
+        <auxhead>
+            <auxheader colspan="2" label="Formulario de Registro" style="font-size:16px" image="/imagenes/demo.png"/>
+        </auxhead>
+        <rows>
+            <row>
+                Descripcion <textbox id="descripBox" value="${win$composer.registro.descripcion}" hflex="1" constraint="no empty"/>
+            </row>
+            <row spans="2" align="right">
+                <hlayout>
+                    
+                    <button id="submitButton" label="Submit" onClick="@command('guardar')"/>
+                </hlayout>
+            </row>
+        </rows>
+    </grid>
+</window>
+</zk>

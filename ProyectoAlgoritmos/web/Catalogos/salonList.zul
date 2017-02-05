@@ -1,0 +1,21 @@
+<zk xmlns:c="client">
+    <!--     <style src="/widgets/grid/inline_editing/style.css" /> -->
+    <div apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('com.ibero.vm.SalonVIewModel')">
+        <grid id="salonGrid" hflex="min " model="@load(vm.salon)">
+            <columns height="22px">
+                <column width="120px" label="ID" align="center"></column>
+                <column width="330px" label="Descripción" align="center"></column>
+            </columns>
+            <template name="model">
+                <row>
+                    <textbox inplace="true"
+                             value="@bind(each.id_salon)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.s_descripcion)" width="99%" />
+                </row>
+            </template>
+        </grid>
+        <button label="Ok" onClick="@command('guardar')" width="100px" height="30px" />
+    </div>
+</zk>

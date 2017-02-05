@@ -1,0 +1,33 @@
+<zk xmlns:c="client">
+    <div apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('com.ibero.vistas.usuarioViewModel')">
+         <grid id="usuarioGrid" hflex="min" model="@load(vm.usuarios)">
+            <columns height="22px">
+                <column width="120px" label="ID" align="center"></column>
+                <column width="120px" label="Nombre" align="center"></column>
+                 <column width="120px" label="Apellido paterno" align="center"></column>
+                <column width="120px" label="Apellido Materno" align="center"></column>
+                <column width="120px" label="ID_Tipo Usuario" align="center"></column>
+                <column width="120px" label="ID_Sepomex" align="center"></column>
+            </columns>
+            <template name="model">
+                <row>
+                    <textbox inplace="true"
+                             value="@bind(each.id_usuario)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.nombre)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.a_paterno)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.a_materno)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.id_tipousuario)" width="99%" />
+                    <textbox inplace="true"
+                             value="@bind(each.id_sepomex)" width="99%" />
+                </row>
+            </template>
+        </grid> 
+        
+    </div>
+</zk>
+

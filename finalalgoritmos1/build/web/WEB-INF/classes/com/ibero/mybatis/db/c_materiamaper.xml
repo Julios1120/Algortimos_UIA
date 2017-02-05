@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapermateria">
+    <select id ="mapermateria.selectmateria" resultType="materia">
+        select id_materia, descripcion from c_materia
+    </select>
+    <insert id="insertMateria" parameterType="materia">
+   
+   		INSERT INTO`c_materia` (`descripcion`) VALUES 
+                (#{descripcion, jdbcType=VARCHAR})
+   </insert>
+</mapper>

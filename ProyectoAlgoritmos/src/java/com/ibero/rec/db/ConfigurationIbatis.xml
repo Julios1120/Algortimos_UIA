@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="Salon" type="com.ibero.dao.Salon"/>
+        <typeAlias alias="Materia" type="com.ibero.dao.Materia"/>
+        <typeAlias alias="tipousuario" type="com.ibero.dao.tipoUsuario"/>
+        <typeAlias alias="Grupo" type="com.ibero.dao.Grupo"/>
+        <typeAlias alias="Sepomex" type="com.ibero.dao.Sepomex"/>
+        <typeAlias alias="Usuario" type="com.ibero.dao.Usuario"/>
+    </typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ProyectoAlgoritmos"/>
+                <property name="username" value="karimwey" />
+                <property name="password" value="123456" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/ibero/rec/db/mapperSalon.xml" />
+        <mapper resource="com/ibero/rec/db/mapperMateria.xml" />
+        <mapper resource="com/ibero/rec/db/mapperTipoUsuario.xml" />
+        <mapper resource="com/ibero/rec/db/mapperGrupo.xml" />
+        <mapper resource="com/ibero/rec/db/mapperSEPOMEX.xml" />
+        <mapper resource="com/ibero/rec/db/mapperUsuario.xml" />
+    </mappers>
+</configuration>
